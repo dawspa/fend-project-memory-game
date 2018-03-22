@@ -2,3 +2,7 @@
 .htmlhintrc
 .stylelintrc
 .eslintrc.json
+.gitignore
+.idea
+CONTRIBUTING.MD
+.gitattributes
