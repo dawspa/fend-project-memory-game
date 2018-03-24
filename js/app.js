@@ -1,7 +1,9 @@
-/*
- * Create a list that holds all of your cards
- */
+let temp = document.getElementsByClassName('card');
+const cardsArr = [...temp];
+const deck = document.getElementById('deck');
 
+let moveCount = document.getElementsByClassName('.moves');
+let moves = 0;
 
 /*
  * Display the cards on the page
@@ -12,7 +14,7 @@
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -23,6 +25,17 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+document.onload = start();
+
+function start() {
+    shuffle(cardsArr);
+    deck.innerHTML = '';
+    for (let card of cardsArr) {
+        deck.appendChild(card);
+        card.classList.remove('open', 'show', 'match', 'blockClick');
+    }
 }
 
 
