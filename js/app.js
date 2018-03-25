@@ -5,6 +5,8 @@ const deck = document.getElementById('deck');
 let moveCount = document.getElementsByClassName('.moves');
 let moves = 0;
 
+const timer = document.querySelector('.timer');
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -36,7 +38,31 @@ function start() {
         deck.appendChild(card);
         card.classList.remove('open', 'show', 'match', 'blockClick');
     }
+    //timer reset
+    sec = 0;
+    min = 0;
+    timer.textContent = '0:00';
+    clearInterval(timing);
 }
+
+//timer functionality
+let sec = 0;
+let min = 0;
+let timing;
+
+function timerStart() {
+    timing = setInterval(function () {
+        timer.textContent = '${min}:${sec}';
+        sec++;
+        if (sec === 60) {
+            min++;
+            sec = 0;
+        }
+    }, 1000);
+}
+
+//move counter
+
 
 
 /*
