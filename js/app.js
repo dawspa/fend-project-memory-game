@@ -2,17 +2,34 @@ let temp = document.getElementsByClassName('card');
 const cardsArr = [...temp];
 const deck = document.getElementById('deck');
 
-let moveCount = document.getElementsByClassName('.moves');
+const counter = document.querySelector('.moves');
 let moves = 0;
 
 const timer = document.querySelector('.timer');
+let sec = 0;
+let min = 0;
+let timing;
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+//timer functionality
+function timerStart() {
+    timing = setInterval(function () {
+        timer.textContent = `${min}:${sec}`;
+        sec++;
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+        if (sec === 60) { //maybe ==
+            min++;
+            sec = 0;
+        }
+    }, 1000);
+}
+
+//move counter
+function moveCount() {
+    moves++;
+    counter.textContent = moves;
+}
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -41,27 +58,14 @@ function start() {
     //timer reset
     sec = 0;
     min = 0;
-    timer.textContent = '0:00';
+    // timer.textContent = '0:00';
     clearInterval(timing);
+    //moves reset
+    moves = 0;
+    counter.textContent = moves;
+    setTimeout(timerStart(), 2000);
 }
 
-//timer functionality
-let sec = 0;
-let min = 0;
-let timing;
-
-function timerStart() {
-    timing = setInterval(function () {
-        timer.textContent = '${min}:${sec}';
-        sec++;
-        if (sec === 60) {
-            min++;
-            sec = 0;
-        }
-    }, 1000);
-}
-
-//move counter
 
 
 
