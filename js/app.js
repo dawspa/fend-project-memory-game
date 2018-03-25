@@ -2,7 +2,7 @@ let temp = document.getElementsByClassName('card');
 const cardsArr = [...temp];
 const deck = document.getElementById('deck');
 
-const counter = document.querySelector('.moves');
+const counter = document.querySelector(".moves");
 let moves = 0;
 
 const timer = document.querySelector('.timer');
@@ -10,7 +10,9 @@ let sec = 0;
 let min = 0;
 let timing;
 
-//timer functionality
+const stars = document.querySelectorAll('.fa-star');
+
+//timer functionality - maybe after card open
 function timerStart() {
     timing = setInterval(function () {
         timer.textContent = `${min}:${sec}`;
@@ -18,17 +20,27 @@ function timerStart() {
         if (sec < 10) {
             sec = "0" + sec;
         }
-        if (sec === 60) { //maybe ==
+        if (sec === 60) {
             min++;
             sec = 0;
         }
     }, 1000);
 }
 
-//move counter
+//move counter - call in clicking
 function moveCount() {
     moves++;
-    counter.textContent = moves;
+    counter.innerHTML = moves;
+}
+
+//stars rating - call in clicking
+function starRating() {
+    if (moves === 15) {
+        stars[2].style.visibility = 'hidden';
+    }
+    if (moves === 25) {
+        stars[1].style.visibility = 'hidden';
+    }
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -54,19 +66,17 @@ function start() {
     for (let card of cardsArr) {
         deck.appendChild(card);
         card.classList.remove('open', 'show', 'match', 'blockClick');
+        //add listener!
     }
     //timer reset
     sec = 0;
     min = 0;
-    // timer.textContent = '0:00';
     clearInterval(timing);
     //moves reset
     moves = 0;
-    counter.textContent = moves;
+    counter.innerHTML = moves;
     setTimeout(timerStart(), 2000);
 }
-
-
 
 
 /*
@@ -76,6 +86,5 @@ function start() {
  *  - if the list already has another card, check to see if the two cards match
  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
  *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
