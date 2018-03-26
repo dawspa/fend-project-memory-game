@@ -17,6 +17,8 @@ const matchesFound = deck.getElementsByClassName('match');
 
 const blocker = document.getElementById('blocker');
 
+const reset = document.querySelector('.restart');
+
 //timer functionality
 function timerStart() {
     timing = setInterval(function () {
@@ -48,6 +50,10 @@ function starRating() {
     }
 }
 
+//restart game with reset button
+reset.addEventListener('click', start);
+
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -74,6 +80,7 @@ function start() {
         card.addEventListener('click', gameplay);
     }
     //timer reset
+    timer.innerHTML = '0:00';
     sec = 0;
     min = 0;
     clearInterval(timing);
@@ -82,6 +89,7 @@ function start() {
     counter.innerHTML = moves;
     setTimeout(timerStart(), 2000);
 }
+
 
 //gameplay engine
 function gameplay() {
