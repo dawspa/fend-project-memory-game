@@ -34,13 +34,13 @@ function timerStart() {
     }, 1000);
 }
 
-//move counter - call in clicking
+//move counter
 function moveCount() {
     moves++;
     counter.innerHTML = moves;
 }
 
-//stars rating - call in clicking
+//stars rating
 function starRating() {
     if (moves === 15) {
         stars[2].style.visibility = 'hidden';
@@ -113,7 +113,7 @@ function gameplay() {
 
             //gameover screen display
             if (matchesFound.length === cardsArr.length) {
-                //splash goes here
+                //TODO: splash goes here
             }
         }
         else {
@@ -129,6 +129,14 @@ function gameplay() {
         }
     }
 }
-/*
+
+/*    Todo:
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ *    +add animation
+ *    +restyle deck
+ *    +add svg MC icons
+ *    +add MC fonts
+ *    +change bg of deck wood page ore and revers grass
+ *    +responsivness
+ *
  */
