@@ -1,4 +1,4 @@
-let temp = document.getElementsByClassName('card');
+let temp = document.querySelectorAll('.card');
 const cardsArr = [...temp];
 const deck = document.getElementById('deck');
 
@@ -11,6 +11,8 @@ let min = 0;
 let timing;
 
 const stars = document.querySelectorAll('.fa-star');
+
+let cardsOpen = [];
 
 //timer functionality - maybe after card open
 function timerStart() {
@@ -66,7 +68,7 @@ function start() {
     for (let card of cardsArr) {
         deck.appendChild(card);
         card.classList.remove('open', 'show', 'match', 'blockClick');
-        //add listener!
+        card.addEventListener('click', gameplay);
     }
     //timer reset
     sec = 0;
@@ -78,9 +80,10 @@ function start() {
     setTimeout(timerStart(), 2000);
 }
 
+function gameplay() {
 
+}
 /*
- * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
