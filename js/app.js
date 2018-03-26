@@ -1,4 +1,4 @@
-let temp = document.querySelectorAll('.card');
+const temp = document.querySelectorAll('.card');
 const cardsArr = [...temp];
 const deck = document.getElementById('deck');
 
@@ -13,8 +13,11 @@ let timing;
 const stars = document.querySelectorAll('.fa-star');
 
 let cardsOpen = [];
+const matchesFound = deck.getElementsByClassName('match');
 
-//timer functionality - maybe after card open
+const blocker = document.getElementById('blocker');
+
+//timer functionality
 function timerStart() {
     timing = setInterval(function () {
         timer.textContent = `${min}:${sec}`;
@@ -80,14 +83,44 @@ function start() {
     setTimeout(timerStart(), 2000);
 }
 
+//gameplay engine
 function gameplay() {
-    console.log('click');
+    //open card
+    this.classList.toggle('open');
+    this.classList.toggle('show');
+    this.classList.toggle('blockClick');
+    cardsOpen.push(this);
+
+    //if 2 cards open, match them
+    if (cardsOpen.length === 2) {
+        moveCount();
+        starRating();
+        //matching cards
+        if (cardsOpen[0].isEqualNode(cardsOpen[1])) {
+            cardsOpen[0].classList.toggle('match');
+            cardsOpen[1].classList.toggle('match');
+            cardsOpen[0].classList.remove('show', 'open');
+            cardsOpen[1].classList.remove('show', 'open');
+            cardsOpen = [];
+
+            //gameover screen display
+            if (matchesFound.length === cardsArr.length) {
+                //splash goes here
+            }
+        }
+        else {
+            //prevent clicking more than 2 cards
+            blocker.classList.toggle('disable');
+            //if no match, flip cards back after some time
+            setTimeout(function () {
+                cardsOpen[0].classList.remove('show', 'open', 'blockClick');
+                cardsOpen[1].classList.remove('show', 'open', 'blockClick');
+                cardsOpen = [];
+                blocker.classList.remove('disable');
+            }, 1000);
+        }
+    }
 }
 /*
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
