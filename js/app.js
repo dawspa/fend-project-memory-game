@@ -81,7 +81,7 @@ function start() {
 }
 
 function gameplay() {
-
+    console.log('click');
 }
 /*
  *  - display the card's symbol (put this functionality in another function that you call from this one)
