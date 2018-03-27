@@ -19,6 +19,8 @@ const blocker = document.getElementById('blocker');
 
 const reset = document.querySelector('.restart');
 
+const endPopup = document.getElementById('popFinish');
+
 //timer functionality
 function timerStart() {
     timing = setInterval(function () {
@@ -113,7 +115,12 @@ function gameplay() {
 
             //gameover screen display
             if (matchesFound.length === cardsArr.length) {
-                //TODO: splash goes here
+                //save gametime
+                const gameTime = timer.innerHTML;
+                clearInterval(timing);
+                //show gamemover screen
+                endPopup.classList.toggle('pShow');
+
             }
         }
         else {
