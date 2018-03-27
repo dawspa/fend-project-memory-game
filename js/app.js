@@ -68,17 +68,21 @@ function gameEnd() {
     document.getElementById('moveStats').innerHTML = moves;
     document.getElementById('timeStats').innerHTML = gameTime;
     gameRetry();
-    //handle close button
-    const close = document.querySelector('.close');
-    close.addEventListener('click', function () {
-        endPopup.classList.remove('pShow')
-    })
+    gameClose();
 }
 
 //handle play again button
 function gameRetry() {
     const retry = document.getElementById('retry');
     retry.addEventListener('click', start);
+}
+
+//handle close button
+function gameClose() {
+    const close = document.querySelector('.close');
+    close.addEventListener('click', function () {
+        endPopup.classList.remove('pShow')
+    });
 }
 
 
