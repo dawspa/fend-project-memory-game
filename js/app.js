@@ -11,6 +11,7 @@ let min = 0;
 let timing;
 
 const stars = document.querySelectorAll('.fa-star');
+const starsP = document.querySelectorAll('.star-p');
 
 let cardsOpen = [];
 const matchesFound = deck.getElementsByClassName('match');
@@ -46,14 +47,25 @@ function moveCount() {
 function starRating() {
     if (moves === 15) {
         stars[2].style.visibility = 'hidden';
+        starsP[2].style.visibility = 'hidden';
     }
-    if (moves === 25) {
+    else if (moves === 20) {
         stars[1].style.visibility = 'hidden';
+        starsP[1].style.visibility = 'hidden';
     }
 }
 
 //restart game with reset button
 reset.addEventListener('click', start);
+
+function gameEnd() {
+    //save gametime
+    const gameTime = timer.innerHTML;
+    clearInterval(timing);
+    //show gamemover screen
+    endPopup.classList.toggle('pShow');
+
+}
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -115,12 +127,7 @@ function gameplay() {
 
             //gameover screen display
             if (matchesFound.length === cardsArr.length) {
-                //save gametime
-                const gameTime = timer.innerHTML;
-                clearInterval(timing);
-                //show gamemover screen
-                endPopup.classList.toggle('pShow');
-
+                gameEnd();
             }
         }
         else {

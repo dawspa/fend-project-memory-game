@@ -80,18 +80,21 @@
             <i class="fa fa-cube"></i>
         </li>
     </ul>
-    <div id="popFinish" class="curtain">
+    <div id="popFinish" class="curtain pShow">
         <div class="popup">
             <a class="close" href="#">×</a>
             <h2 class="congrMessage">Congratulations</h2>
             <div class="stats">
                 <p>You made <span id="finalMove">1</span> moves </p>
                 <p>in <span id="totalTime">0:00</span></p>
-                <p>Rating: <span id="starStats">
-        		<li><i class="fa fa-star" style="color: rgb(255, 215, 0); visibility: visible;"></i></li>
-        		<li><i class="fa fa-star" style="color: rgb(255, 215, 0); visibility: collapse;"></i></li>
-        		<li><i class="fa fa-star" style="color: rgb(255, 215, 0); visibility: collapse;"></i></li>
-        	    </span></p>
+                <p>
+                <ul id="starStats">
+                    <li>Rating:</li>
+                    <li><i class="fa fa-star star-p"></i></li>
+                    <li><i class="fa fa-star star-p"></i></li>
+                    <li><i class="fa fa-star star-p"></i></li>
+                </ul>
+                </p>
             </div>
             <button id="retry" onclick="playAgain()">Play again</button>
         </div>
