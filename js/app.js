@@ -49,7 +49,7 @@ function starRating() {
         stars[2].style.visibility = 'hidden';
         starsP[2].style.visibility = 'hidden';
     }
-    else if (moves === 20) {
+    else if (moves === 25) {
         stars[1].style.visibility = 'hidden';
         starsP[1].style.visibility = 'hidden';
     }
