@@ -1,5 +1,5 @@
-const temp = document.querySelectorAll('.card');
-const cardsArr = [...temp];
+const cardsList = document.querySelectorAll('.card');
+const cardsArr = [...cardsList];
 const deck = document.getElementById('deck');
 
 const counter = document.querySelector(".moves");
@@ -14,9 +14,9 @@ const stars = document.querySelectorAll('.fa-star');
 const starsP = document.querySelectorAll('.star-p');
 
 let cardsOpen = [];
-const matchesFound = deck.getElementsByClassName('match');
+let matchesArr = [];
 
-const blocker = document.getElementById('blocker');
+// const blocker = document.getElementById('blocker');
 
 const reset = document.querySelector('.restart');
 
@@ -85,6 +85,24 @@ function gameClose() {
     });
 }
 
+function disableCard() {
+    for (let card of cardsArr) {
+        card.classList.add('blockClick');
+    }
+}
+
+function enableCard() {
+    setTimeout(function () {
+        for (let card of cardsArr) {
+            card.classList.remove('blockClick');
+        }
+    }, 310);
+    setTimeout(function () {
+        for (let card of matchesArr) {
+            card.classList.add('blockClick');
+        }
+    }, 312);
+}
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -139,6 +157,8 @@ function gameplay() {
 
     //if 2 cards open, match them
     if (cardsOpen.length === 2) {
+        //prevent clicking more than 2 cards
+        disableCard();
         moveCount();
         starRating();
         //matching cards
@@ -147,22 +167,22 @@ function gameplay() {
             cardsOpen[1].classList.toggle('match');
             cardsOpen[0].classList.remove('show', 'open');
             cardsOpen[1].classList.remove('show', 'open');
+            matchesArr.push(cardsOpen[0], cardsOpen[1]);
             cardsOpen = [];
 
             //gameover screen display
-            if (matchesFound.length === cardsArr.length) {
+            if (matchesArr.length === 16) {
                 gameEnd();
             }
+            enableCard();
         }
         else {
-            //prevent clicking more than 2 cards
-            blocker.classList.toggle('disable');
             //if no match, flip cards back after some time
             setTimeout(function () {
-                cardsOpen[0].classList.remove('show', 'open', 'blockClick');
-                cardsOpen[1].classList.remove('show', 'open', 'blockClick');
+                cardsOpen[0].classList.remove('show', 'open');
+                cardsOpen[1].classList.remove('show', 'open');
                 cardsOpen = [];
-                blocker.classList.remove('disable');
+                enableCard();
             }, 1000);
         }
     }

@@ -70,12 +70,12 @@ h1 {
 #deck .card.open {
     background: #02b3e4;
     cursor: default;
+    transform: rotateY(180deg);
+    transition: 0.3s;
 }
 
 #deck .card.show {
     font-size: 33px;
-    transform: rotateY(180deg);
-    transition: 0.3s;
 }
 
 #deck .card.match {
@@ -124,18 +124,9 @@ h1 {
     }
 }
 
-/*disables doubleclick*/
+/*disables doubleclick and clicking too much*/
 #deck .card.blockClick {
     pointer-events: none;
-}
-
-/*blocks clicking on more than 2 cards*/
-.disable {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-color: transparent;
-    position: fixed;
 }
 
 /*
