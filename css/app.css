@@ -189,6 +189,10 @@ h1 {
     text-align: center;
 }
 
+.congrMessage {
+    margin: 0 auto 1em;
+}
+
 .pShow {
     visibility: visible !important;
     opacity: 100 !important;
@@ -211,7 +215,7 @@ h1 {
     padding: 0.7rem 1rem;
     font-size: 1.1rem;
     display: block;
-    margin: 0 auto;
+    margin: 1em auto;
     width: 50%;
     color: #ffffff;
     border-radius: 5px;

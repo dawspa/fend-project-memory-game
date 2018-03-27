@@ -169,9 +169,8 @@ function gameplay() {
 }
 
 /*    Todo:
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  *    +add animation
- *    +restyle deck
+ *    +restyle deck. css
  *    +add svg MC icons
  *    +add MC fonts
  *    +change bg of deck wood page ore and revers grass
