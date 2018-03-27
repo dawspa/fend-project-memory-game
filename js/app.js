@@ -60,11 +60,13 @@ reset.addEventListener('click', start);
 
 function gameEnd() {
     //save gametime
-    const gameTime = timer.innerHTML;
+    const gameTime = timer.textContent;
     clearInterval(timing);
     //show gamemover screen
     endPopup.classList.toggle('pShow');
-
+    //set stats
+    document.getElementById('moveStats').innerHTML = moves;
+    document.getElementById('timeStats').innerHTML = gameTime;
 }
 
 
