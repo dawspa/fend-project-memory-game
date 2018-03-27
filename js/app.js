@@ -118,6 +118,10 @@ function start() {
     counter.innerHTML = moves;
     setTimeout(timerStart(), 2000);
     //stars reset
+    for (let i = 1; i < 3; i++) {
+        stars[i].removeAttribute('style');
+        starsP[i].removeAttribute('style');
+    }
 }
 
 
