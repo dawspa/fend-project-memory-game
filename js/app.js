@@ -67,6 +67,18 @@ function gameEnd() {
     //set stats
     document.getElementById('moveStats').innerHTML = moves;
     document.getElementById('timeStats').innerHTML = gameTime;
+    gameRetry();
+    //handle close button
+    const close = document.querySelector('.close');
+    close.addEventListener('click', function () {
+        endPopup.classList.remove('pShow')
+    })
+}
+
+//handle play again button
+function gameRetry() {
+    const retry = document.getElementById('retry');
+    retry.addEventListener('click', start);
 }
 
 
@@ -88,6 +100,7 @@ function shuffle(array) {
 document.onload = start();
 
 function start() {
+    endPopup.classList.remove('pShow');
     shuffle(cardsArr);
     deck.innerHTML = '';
     for (let card of cardsArr) {
@@ -104,6 +117,7 @@ function start() {
     moves = 0;
     counter.innerHTML = moves;
     setTimeout(timerStart(), 2000);
+    //stars reset
 }
 
 
