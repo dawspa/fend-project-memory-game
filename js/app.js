@@ -123,6 +123,7 @@ document.onload = start();
 
 function start() {
     endPopup.classList.remove('pShow');
+    matchesArr = [];
     shuffle(cardsArr);
     deck.innerHTML = '';
     for (let card of cardsArr) {
@@ -189,11 +190,10 @@ function gameplay() {
 }
 
 /*    Todo:
- *    +add animation
  *    +restyle deck. css
  *    +add svg MC icons
  *    +add MC fonts
  *    +change bg of deck wood page ore and revers grass
  *    +responsivness
- *
+ *    +license and readme
  */
