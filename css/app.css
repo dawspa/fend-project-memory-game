@@ -54,8 +54,7 @@ h1 {
 #deck .card {
     height: 125px;
     width: 125px;
-    background: #2e3d49;
-    color: #ffffff;
+    background: #828282 url('../img/stone.jpeg');
     border-radius: 8px;
     cursor: pointer;
     display: flex;
