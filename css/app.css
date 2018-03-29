@@ -55,7 +55,6 @@ h1 {
     height: 125px;
     width: 125px;
     background: #2e3d49;
-    font-size: 0;
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
@@ -67,24 +66,36 @@ h1 {
     transition: 0.3s;
 }
 
+#deck .card img {
+    display: none;
+}
+
 #deck .card.open {
-    background: #02b3e4;
+    background: #bbbbbb;
     cursor: default;
     transform: rotateY(180deg);
     transition: 0.3s;
 }
 
-#deck .card.show {
-    font-size: 33px;
+#deck .card.show img {
+    display: block;
+    width: 80%;
+    height: auto;
 }
 
 #deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #007b26;
     font-size: 33px;
     animation: tada linear 1s;
     animation-iteration-count: 1;
     transform-origin: 50% 50%;
+}
+
+#deck .card.match img {
+    display: block;
+    width: 80%;
+    height: auto;
 }
 
 /*animation code from cssanimate.com*/
