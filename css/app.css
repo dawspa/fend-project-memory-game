@@ -69,7 +69,7 @@ h1 {
 }
 
 #deck .card.open {
-    background: #bbbbbb;
+    background: #ffffff;
     cursor: default;
     transform: rotateY(180deg);
     transition: 0.3s;
@@ -83,7 +83,7 @@ h1 {
 
 #deck .card.match {
     cursor: default;
-    background: #007b26;
+    background: #747474;
     font-size: 33px;
     animation: tada linear 1s;
     animation-iteration-count: 1;
