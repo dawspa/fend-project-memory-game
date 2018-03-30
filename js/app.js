@@ -191,7 +191,8 @@ function gameplay() {
 
 /*    Todo:
  *    +add MC fonts
- *    +change bg of deck wood page ore and revers grass
+ *    +style popup
+ *    +replace stars
  *    +responsivness
  *    +meta
  *    +license and readme, assets and code cleanup

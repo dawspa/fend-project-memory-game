@@ -195,7 +195,7 @@ h1 {
 .popup {
     margin: 10% auto;
     padding: 20px;
-    background: #ffffff;
+    background: #ffffff url('../img/sand.jpeg') repeat;
     border-radius: 5px;
     width: 60%;
     position: relative;
