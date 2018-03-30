@@ -8,6 +8,17 @@ html {
     box-sizing: inherit;
 }
 
+/*Custom fonts*/
+@font-face {
+    font-family: minecraftRegular;
+    src: url('../font/minecraftfont.woff');
+}
+
+@font-face {
+    font-family: minecraftV3;
+    src: url('../font/Minecrafter_3.ttf');
+}
+
 html,
 body {
     width: 100%;
@@ -18,7 +29,7 @@ body {
 
 body {
     background: #ffffff url('../img/clouds.png') repeat;
-    font-family: 'Coda', cursive;
+    font-family: minecraftRegular, sans-serif;
     background-size: cover;
 
 }
@@ -31,7 +42,8 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: minecraftV3, sans-serif;
+    color: #747474;
     font-weight: 300;
 }
 
@@ -200,6 +212,7 @@ h1 {
     width: 60%;
     position: relative;
     transition: all 5s ease-in-out;
+    font-family: minecraftRegular, Arial, sans-serif;
 }
 
 .popCont {
@@ -209,7 +222,6 @@ h1 {
 .popup h2 {
     margin-top: 0;
     color: #333;
-    font-family: Tahoma, Arial, sans-serif;
 }
 
 .popup .close {

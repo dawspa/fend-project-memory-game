@@ -197,4 +197,5 @@ function gameplay() {
  *    +meta
  *    +license and readme, assets and code cleanup
  *    +check req udacity
+ *    +icons git, photo game assets and screens, mc regular font http://fontsforweb.com/font/show?id=1412 , Minecraft 3 - "Asherz08", "MadPixel", "Ashley Denham"
  */
