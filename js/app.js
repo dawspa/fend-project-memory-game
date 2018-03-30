@@ -190,10 +190,10 @@ function gameplay() {
 }
 
 /*    Todo:
- *    +restyle deck. css
- *    +add svg MC icons
  *    +add MC fonts
  *    +change bg of deck wood page ore and revers grass
  *    +responsivness
- *    +license and readme
+ *    +meta
+ *    +license and readme, assets and code cleanup
+ *    +check req udacity
  */

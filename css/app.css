@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/backgrmemo.jpg') no-repeat;
+    background: #ffffff url('../img/clouds.png') repeat;
     font-family: 'Coda', cursive;
     background-size: cover;
 
