@@ -190,7 +190,6 @@ function gameplay() {
 }
 
 /*    Todo:
- *    +replace stars
  *    +responsivness
  *    +meta
  *    +license and readme, assets and code cleanup

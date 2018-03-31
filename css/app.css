@@ -39,6 +39,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 h1 {
@@ -237,7 +240,7 @@ h1 {
 }
 
 .popup .close:hover {
-    color: #E5F720;
+    color: #af211f;
 }
 
 .popup .congrMessage,
