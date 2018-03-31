@@ -10,7 +10,7 @@ let sec = 0;
 let min = 0;
 let timing;
 
-const stars = document.querySelectorAll('.fa-star');
+const stars = document.querySelectorAll('.fa-cube');
 const starsP = document.querySelectorAll('.star-p');
 
 let cardsOpen = [];
@@ -190,8 +190,6 @@ function gameplay() {
 }
 
 /*    Todo:
- *    +add MC fonts
- *    +style popup
  *    +replace stars
  *    +responsivness
  *    +meta
