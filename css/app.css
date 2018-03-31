@@ -16,7 +16,7 @@ html {
 
 @font-face {
     font-family: minecraftV3;
-    src: url('../font/Minecrafter_3.ttf');
+    src: url('../font/Minecrafter_3.woff');
 }
 
 html,
@@ -43,8 +43,9 @@ body {
 
 h1 {
     font-family: minecraftV3, sans-serif;
-    color: #747474;
-    font-weight: 300;
+    color: #484545;
+    font-size: 2.5em;
+    margin: 10px auto 0;
 }
 
 /*
