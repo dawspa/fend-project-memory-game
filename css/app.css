@@ -374,3 +374,9 @@ h1 {
         font-size: 2em;
     }
 }
+
+@media (min-width: 1280px) {
+    .score-panel {
+        font-size: 1.2em;
+    }
+}
