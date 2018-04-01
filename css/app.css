@@ -307,11 +307,17 @@ h1 {
         height: 18vw;
         width: 18vw;
     }
+}
 
+@media (max-width: 1000px) {
     .popup {
         width: 90%;
-        margin: 5% auto;
+        margin: 10px auto;
         padding: 10px;
+    }
+
+    .popup h2 {
+        margin: 0 auto;
     }
 
     .popCont {
