@@ -293,7 +293,7 @@ h1 {
     }
 
     .score-panel {
-        max-width: 90%;
+        max-width: 95vw;
     }
 
     #deck {
@@ -306,6 +306,28 @@ h1 {
     #deck .card {
         height: 18vw;
         width: 18vw;
+    }
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .score-panel {
+        max-width: 80vh;
+    }
+
+    #deck {
+        width: 85vh;
+        height: 85vh;
+        min-height: 85vh;
+        padding: 5vh;
+    }
+
+    #deck .card {
+        height: 17vh;
+        width: 17vh;
     }
 }
 

@@ -190,7 +190,6 @@ function gameplay() {
 }
 
 /*    Todo:
- *    +responsivness
  *    +meta
  *    +license and readme, assets and code cleanup
  *    +check req udacity
